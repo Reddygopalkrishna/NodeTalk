@@ -18,12 +18,14 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://node-talk-kappa.vercel.app", "https://node-talk-git-main-reddygopalkrishnas-projects.vercel.app"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://node-talk-kappa.vercel.app",
+    "https://node-talk-git-main-reddygopalkrishnas-projects.vercel.app"
+  ],
+  credentials: true,
+}));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
